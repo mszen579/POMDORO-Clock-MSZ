@@ -7,8 +7,8 @@ $('#reset').hide(); // this code will hide the reset button when refresh the pag
 
 ////////////////////////configuring the reset button/////////////////////////////////////////////////
 $("#reset").click(function () {
-    count = 25;
-    breakTime = 25;
+    count = 5;
+    breakTime = 5;
     $("#num").html(count);
     $("#breakNum").html(breakTime);
     $("#start, #minus5Clock, #add5Clock, #add5Break, #minus5Break, #breakNum, #num, #title1, #title2").show();
@@ -56,6 +56,7 @@ $('#start').click(function () { // start bottun
     var counter = setInterval(timer, 1000); //setInterval is a built in function it takes any callback fucntion and set a time in mill sec
     //adding minutes to the counter
     count *= 60;
+    breakTime *= 60;
     function timer() {// this function is decrement by one
         count -= 1;
        
@@ -86,8 +87,8 @@ $('#start').click(function () { // start bottun
 ////////////////////////////////////////The Break session countdown timer ////////////////////////////////////////////////
            
            function breakTimer() {
-               breakTime *= 60;
-               $("#timeType").html("Break Time, Counting down:"); // this is to show the break session in the HTML
+               
+               $("#timeType").html("Break Time:"); // this is to show the break session in the HTML
                $("#breakNum").show(); // this is to show the break session in the HTML
                $("#timeType").show();
                  
@@ -98,7 +99,7 @@ $('#start').click(function () { // start bottun
                    $('#reset').show();
                    $('#breakNum').hide();
                     $('#timeType').hide();
-                            
+                    
                }
 
               
